@@ -20,6 +20,7 @@ namespace MVCPractice.Control
         }
 
         public void AddContact() => Contacts.Add(new Contact());
+        public void AddContact(Contact contact) => Contacts.Add(contact);
 
         public void RemoveContact(int ind) => Contacts.RemoveAt(ind);
     }

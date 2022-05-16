@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVCPractice.Model
 {
-    internal class Contact
+    public class Contact
     {
         public string Name { get; set; }
         public string Surname { get; set; }

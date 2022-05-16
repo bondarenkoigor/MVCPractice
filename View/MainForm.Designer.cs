@@ -33,6 +33,7 @@ namespace MVCPractice.View
         private void InitializeComponent()
         {
             this.ContactsListBox = new System.Windows.Forms.ListBox();
+            this.AddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ContactsListBox
@@ -43,11 +44,23 @@ namespace MVCPractice.View
             this.ContactsListBox.Size = new System.Drawing.Size(256, 121);
             this.ContactsListBox.TabIndex = 0;
             // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.Location = new System.Drawing.Point(90, 141);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(93, 38);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 151);
+            this.ClientSize = new System.Drawing.Size(282, 191);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContactsListBox);
             this.Name = "Form1";
             this.Text = "Contacts";
@@ -58,6 +71,7 @@ namespace MVCPractice.View
         #endregion
 
         private System.Windows.Forms.ListBox ContactsListBox;
+        private System.Windows.Forms.Button AddButton;
     }
 
 }

@@ -13,11 +13,20 @@ namespace MVCPractice.View
 {
     public partial class Form1 : Form
     {
+        ContactController Controller;
         public Form1()
         {
-            ContactController Controller = new ContactController();
+            Controller = new ContactController();
             InitializeComponent();
             this.ContactsListBox.Items.AddRange(Controller.Contacts.ToArray());
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            ContactAdderForm form = new ContactAdderForm();
+            form.ShowDialog();
+            Controller.AddContact(form.Result);
+            this.ContactsListBox.Items.Add(form.Result);
         }
     }
 }
