@@ -1,4 +1,4 @@
-﻿namespace MVCPractice
+﻿namespace MVCPractice.View
 {
     partial class Form1
     {
