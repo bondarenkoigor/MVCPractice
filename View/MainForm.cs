@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MVCPractice.Control;
 
 namespace MVCPractice.View
 {
@@ -14,7 +15,9 @@ namespace MVCPractice.View
     {
         public Form1()
         {
+            ContactController Controller = new ContactController();
             InitializeComponent();
+            this.ContactsListBox.Items.AddRange(Controller.Contacts.ToArray());
         }
     }
 }

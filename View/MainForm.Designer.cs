@@ -1,4 +1,8 @@
-﻿namespace MVCPractice.View
+﻿using MVCPractice.Control;
+using MVCPractice.Model;
+
+
+namespace MVCPractice.View
 {
     partial class Form1
     {
@@ -28,13 +32,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ContactsListBox = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // ContactsListBox
+            // 
+            this.ContactsListBox.FormattingEnabled = true;
+            this.ContactsListBox.Location = new System.Drawing.Point(12, 1);
+            this.ContactsListBox.Name = "ContactsListBox";
+            this.ContactsListBox.Size = new System.Drawing.Size(256, 121);
+            this.ContactsListBox.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(282, 151);
+            this.Controls.Add(this.ContactsListBox);
+            this.Name = "Form1";
+            this.Text = "Contacts";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox ContactsListBox;
     }
+
 }
 

@@ -11,7 +11,13 @@ namespace MVCPractice.Control
     {
         public List<Contact> Contacts { get; set; }
 
-        public ContactController() => Contacts = new List<Contact>();
+        public ContactController()
+        {
+            Contacts = new List<Contact>();
+            Contacts.Add(new Contact());
+            Contacts.Add(new Contact());
+            Contacts.Add(new Contact());
+        }
 
         public void AddContact() => Contacts.Add(new Contact());
 

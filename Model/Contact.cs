@@ -11,15 +11,20 @@ namespace MVCPractice.Model
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Address { get; set; }
-        public string[] Numbers { get; set; }
+        public List<string> Numbers { get; set; }
 
-        public Contact(string name, string surname, string address, string[] nums)
+        public Contact(string name, string surname, string address, List<string> nums)
         {
             Name = name;
             Surname = surname;
             Address = address;
             Numbers = nums;
         }
-        public Contact() : this("Name", "Surname", "Address", new string[] { "number" }) { }
+        public Contact() : this("Name", "Surname", "Address", new List<string> { "number" }) { }
+
+        public override string ToString()
+        {
+            return Name + " " + Surname;
+        }
     }
 }
