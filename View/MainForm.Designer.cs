@@ -4,7 +4,7 @@ using MVCPractice.Model;
 
 namespace MVCPractice.View
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -43,6 +43,8 @@ namespace MVCPractice.View
             this.ContactsListBox.Name = "ContactsListBox";
             this.ContactsListBox.Size = new System.Drawing.Size(256, 121);
             this.ContactsListBox.TabIndex = 0;
+            this.ContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactsListBox_SelectedIndexChanged);
+            this.ContactsListBox.DoubleClick += new System.EventHandler(this.ContactsListBox_DoubleClick);
             // 
             // AddButton
             // 
@@ -55,15 +57,16 @@ namespace MVCPractice.View
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 191);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ContactsListBox);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Contacts";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.ResumeLayout(false);
 
         }

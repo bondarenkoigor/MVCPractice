@@ -1,6 +1,6 @@
 ﻿namespace MVCPractice.View
 {
-    partial class ContactAdderForm
+    partial class ContactManagerForm
     {
         /// <summary>
         /// Required designer variable.

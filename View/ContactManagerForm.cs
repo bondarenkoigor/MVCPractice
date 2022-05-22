@@ -11,11 +11,16 @@ using MVCPractice.Model;
 
 namespace MVCPractice.View
 {
-    public partial class ContactAdderForm : Form
+    public partial class ContactManagerForm : Form
     {
-        public ContactAdderForm()
+        public ContactManagerForm()
         {
             InitializeComponent();
+        }
+
+        public ContactManagerForm(Contact contact)
+        {
+
         }
 
         private void AddButton_Click(object sender, EventArgs e)

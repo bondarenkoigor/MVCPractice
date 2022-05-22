@@ -13,10 +13,10 @@ namespace MVCPractice.Control
 
         public ContactController()
         {
-            Contacts = new List<Contact>();
-            Contacts.Add(new Contact());
-            Contacts.Add(new Contact());
-            Contacts.Add(new Contact());
+            //Contacts = new List<Contact>();
+            Contacts = FilesController.ReadContacts();
+            if (Contacts == null) Contacts = new List<Contact>();
+
         }
 
         public void AddContact() => Contacts.Add(new Contact());

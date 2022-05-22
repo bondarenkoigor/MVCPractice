@@ -47,12 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\ContactController.cs" />
+    <Compile Include="Control\FilesController.cs" />
     <Compile Include="Model\Contact.cs" />
-    <Compile Include="View\ContactAdderForm.cs">
+    <Compile Include="View\ContactManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ContactAdderForm.Designer.cs">
-      <DependentUpon>ContactAdderForm.cs</DependentUpon>
+    <Compile Include="View\ContactManagerForm.Designer.cs">
+      <DependentUpon>ContactManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailedContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DetailedContactForm.Designer.cs">
+      <DependentUpon>DetailedContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
@@ -70,9 +77,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\ContactAdderForm.resx">
-      <DependentUpon>ContactAdderForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\ContactManagerForm.resx">
+      <DependentUpon>ContactManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DetailedContactForm.resx">
+      <DependentUpon>DetailedContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -90,6 +101,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Google_Contacts_icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-delete-16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

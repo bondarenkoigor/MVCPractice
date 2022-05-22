@@ -14,7 +14,7 @@ namespace MVCPractice.Model
         public List<string> Numbers { get; private set; }
         public int id { get; private set; }
 
-        private static int idCounter = 0;
+        public static int idCounter = 0;
         public Contact(string name, string surname, string address, List<string> nums)
         {
             Name = name;
