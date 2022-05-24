@@ -32,20 +32,23 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.AddressLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RedactButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AvatarPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // NumberList
             // 
+            this.NumberList.Alignment = System.Windows.Forms.ListViewAlignment.SnapToGrid;
             this.NumberList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NumberList.Enabled = false;
             this.NumberList.HideSelection = false;
             this.NumberList.LabelWrap = false;
-            this.NumberList.Location = new System.Drawing.Point(12, 306);
+            this.NumberList.Location = new System.Drawing.Point(81, 306);
             this.NumberList.MultiSelect = false;
             this.NumberList.Name = "NumberList";
-            this.NumberList.Size = new System.Drawing.Size(238, 97);
+            this.NumberList.Size = new System.Drawing.Size(184, 97);
             this.NumberList.TabIndex = 4;
             this.NumberList.UseCompatibleStateImageBehavior = false;
             this.NumberList.View = System.Windows.Forms.View.List;
@@ -80,11 +83,36 @@
             this.AddressLabel.Text = "Address";
             this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(63, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "PhoneNumbers:";
+            // 
+            // RedactButton
+            // 
+            this.RedactButton.BackgroundImage = global::MVCPractice.Properties.Resources.Redact;
+            this.RedactButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RedactButton.FlatAppearance.BorderSize = 0;
+            this.RedactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RedactButton.Location = new System.Drawing.Point(220, 3);
+            this.RedactButton.Name = "RedactButton";
+            this.RedactButton.Size = new System.Drawing.Size(41, 41);
+            this.RedactButton.TabIndex = 7;
+            this.RedactButton.UseVisualStyleBackColor = true;
+            this.RedactButton.Click += new System.EventHandler(this.RedactButton_Click);
+            // 
             // DeleteButton
             // 
             this.DeleteButton.BackgroundImage = global::MVCPractice.Properties.Resources.icon_delete_16;
             this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DeleteButton.Location = new System.Drawing.Point(217, 2);
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Location = new System.Drawing.Point(1, 1);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(41, 41);
             this.DeleteButton.TabIndex = 5;
@@ -105,6 +133,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(262, 415);
+            this.Controls.Add(this.RedactButton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.NumberList);
             this.Controls.Add(this.AddressLabel);
@@ -115,6 +145,7 @@
             this.Text = "DetailedContactForm";
             this.Load += new System.EventHandler(this.DetailedContactForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +157,7 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.ListView NumberList;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button RedactButton;
     }
 }

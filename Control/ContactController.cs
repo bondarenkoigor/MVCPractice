@@ -7,21 +7,19 @@ using MVCPractice.Model;
 
 namespace MVCPractice.Control
 {
-    internal class ContactController
+    public static class ContactController
     {
-        public List<Contact> Contacts { get; set; }
+        public static List<Contact> Contacts { get; set; } = new List<Contact>();
 
-        public ContactController()
+        public static void ReadContacts()
         {
-            //Contacts = new List<Contact>();
-            Contacts = FilesController.ReadContacts();
-            if (Contacts == null) Contacts = new List<Contact>();
-
+            var tmp = FilesController.ReadContacts();
+            if (tmp != null)
+                Contacts = tmp;
         }
 
-        public void AddContact() => Contacts.Add(new Contact());
-        public void AddContact(Contact contact) => Contacts.Add(contact);
-
-        public void RemoveContact(int ind) => Contacts.RemoveAt(ind);
+        public static void AddContact() => Contacts.Add(new Contact());
+        public static void AddContact(Contact contact) => Contacts.Add(contact);
+        public static void RemoveContact(int ind) => Contacts.RemoveAt(ind);
     }
 }

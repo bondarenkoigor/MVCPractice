@@ -115,7 +115,7 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // ContactAdderForm
+            // ContactManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +129,7 @@
             this.Controls.Add(this.SurnameTextBox);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.AddButton);
-            this.Name = "ContactAdderForm";
+            this.Name = "ContactManagerForm";
             this.Text = "Add Contact";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,6 +146,6 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.Label PhoneNumbersLabel;
         private System.Windows.Forms.RichTextBox NumbersTextBox;
-        private System.Windows.Forms.Button AddButton;
+        public System.Windows.Forms.Button AddButton;
     }
 }

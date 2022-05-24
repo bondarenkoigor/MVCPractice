@@ -18,9 +18,13 @@ namespace MVCPractice.View
             InitializeComponent();
         }
 
-        public ContactManagerForm(Contact contact)
+        public ContactManagerForm(Contact contact) : this()
         {
-
+            this.NameTextBox.Text = contact.Name;
+            this.SurnameTextBox.Text = contact.Surname;
+            this.AddressTextBox.Text = contact.Address;
+            this.NumbersTextBox.Text = String.Join("\n", contact.Numbers);
+            this.AddButton.Text = "Confirm";
         }
 
         private void AddButton_Click(object sender, EventArgs e)

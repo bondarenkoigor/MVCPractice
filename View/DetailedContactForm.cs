@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MVCPractice.Model;
+using MVCPractice.Control;
 
 namespace MVCPractice.View
 {
@@ -15,6 +16,7 @@ namespace MVCPractice.View
     {
         public int ContactId { get; private set; }
         public bool ShouldDelete { get; private set; } = false;
+        public Contact ShouldRedact { get; private set; } = null;
         public DetailedContactForm()
         {
             InitializeComponent();
@@ -42,12 +44,28 @@ namespace MVCPractice.View
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure?", "Confirm deletion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ShouldDelete = true;
                 this.Close();
             }
         }
 
+        private void NumberList_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            e.DrawText(TextFormatFlags.TextBoxControl);
+        }
+
+        private void RedactButton_Click(object sender, EventArgs e)
+        {
+            ContactManagerForm form = new ContactManagerForm(ContactController.Contacts.Find((contact) => contact.id == this.ContactId));
+            form.AddButton.Click += (_sender, _e) =>
+             {
+                 this.ShouldRedact = form.Result;
+                 this.DeleteButton_Click(sender, e);
+             };
+            form.Show();
+            
+        }
     }
 }
